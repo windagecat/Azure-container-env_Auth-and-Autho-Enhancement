@@ -1,0 +1,14 @@
+# コミットしないファイル
+old/
+*.txt
+kubeconfig
+*/**/old/
+*/**/*.txt
+*/**/kubeconfig
+*/**/.terraform*
+*/**/terraform*
+*/**/manifest/
+
+# ignore除外ファイル
+!*/**/*.tf
+!*/**/*.tfvars

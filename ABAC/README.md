@@ -13,6 +13,8 @@ Azure kubernetes service(AKS)では、k8s認可にAzure RBACを使用すると�
       - [2. ロールの制約](#2-ロールの制約)
       - [3. ロールとプリンシパルのタイプの制約](#3-ロールとプリンシパルのタイプの制約)
       - [4. ロールとプリンシパルの制約](#4-ロールとプリンシパルの制約)
+    - [ハンズオン環境の削除](#ハンズオン環境の削除)
+  - [ABAC機能の注意点](#abac機能の注意点)
 
 
 ## 権限昇格を防止の概要
@@ -90,3 +92,7 @@ terraform apply
   - k8sサービスアカウントへのロール割り当て権限は、普段の運用では割り当てず、[JITアクセス](https://learn.microsoft.com/ja-jp/azure/aks/access-control-managed-azure-ad#configure-just-in-time-cluster-access-with-microsoft-entra-id-and-aks)を構成し、必要な時にだけ付与するとよい。
 - 選択されたロールの割り当てにのみ制限する場合も、セキュリティ原則として、その選択されたロールの権限は最小権限にとどめること。
   - コンテナセキュリティ製品によって、k8s rbacの過剰権限を警告してくれる機能もあるので、活用するとよい。
+  
+
+
+[メインページ](../README.md)のページへ戻る

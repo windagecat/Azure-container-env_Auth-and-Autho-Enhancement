@@ -1,0 +1,74 @@
+{
+    "sessionControls": {
+        "disableResilienceDefaults": null,
+        "applicationEnforcedRestrictions": null,
+        "cloudAppSecurity": null,
+        "persistentBrowser": null,
+        "continuousAccessEvaluation": null,
+        "secureSignInSession": null,
+        "networkAccessSecurity": null,
+        "globalSecureAccessFilteringProfile": null,
+        "signInFrequency": {
+          "value": 8,
+          "type": "hours",
+          "frequencyInterval": "timeBased",
+          "isEnabled": true
+        }
+    },
+    "conditions": {
+      "userRiskLevels": [],
+      "signInRiskLevels": [],
+      "clientAppTypes": [
+        "all"
+      ],
+      "servicePrincipalRiskLevels": [],
+      "insiderRiskLevels": null,
+      "clients": null,
+      "platforms": null,
+      "locations": null,
+      "times": null,
+      "deviceStates": null,
+      "devices": null,
+      "clientApplications": null,
+      "authenticationFlows": null,
+      "applications": {
+        "includeApplications": [
+          "499b84ac-1321-427f-aa17-267ca6975798",
+          "6dae42f8-4368-4678-94ff-3960e28e3630",
+          "797f4846-ba00-4fd7-ba43-dac1f8f63013",
+          "MicrosoftAdminPortals"
+        ],
+        "excludeApplications": [],
+        "includeUserActions": [],
+        "includeAuthenticationContextClassReferences": [],
+        "applicationFilter": null,
+        "networkAccess": null,
+        "globalSecureAccess": null
+      },
+      "users": {
+        "includeUsers": [
+          "${groupid}"
+        ],
+        "excludeUsers": [
+          "${selfacountid}"
+        ],
+        "includeGroups": [],
+        "excludeGroups": [],
+        "includeRoles": [],
+        "excludeRoles": [],
+        "includeGuestsOrExternalUsers": null,
+        "excludeGuestsOrExternalUsers": null
+      }
+    },
+    "grantControls": {
+      "operator": "OR",
+      "builtInControls": [
+        "compliantDevice"
+      ],
+      "customAuthenticationFactors": [],
+      "termsOfUse": [],
+      "authenticationStrength": null
+    },
+    "displayName": "コンテナ環境のデバイス準拠ポリシー",
+    "state": "enabledForReportingButNotEnforced"
+}

@@ -1,10 +1,10 @@
 # コミットしないファイル
 old/
 *.txt
-kubeconfig
+*kubeconfig
 */**/old/
 */**/*.txt
-*/**/kubeconfig
+*/**/*kubeconfig
 */**/.terraform*
 */**/terraform*
 */**/manifest/

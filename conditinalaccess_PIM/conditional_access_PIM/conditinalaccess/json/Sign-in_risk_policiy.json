@@ -1,0 +1,75 @@
+{
+    "conditions": {
+      "userRiskLevels": [],
+      "signInRiskLevels": [
+        "high",
+        "medium"
+      ],
+      "clientAppTypes": [
+        "all"
+      ],
+      "servicePrincipalRiskLevels": [],
+      "insiderRiskLevels": null,
+      "clients": null,
+      "platforms": null,
+      "locations": null,
+      "times": null,
+      "deviceStates": null,
+      "devices": null,
+      "clientApplications": null,
+      "authenticationFlows": null,
+      "applications": {
+        "includeApplications": [
+          "All"
+        ],
+        "excludeApplications": [],
+        "includeUserActions": [],
+        "includeAuthenticationContextClassReferences": [],
+        "applicationFilter": null,
+        "networkAccess": null,
+        "globalSecureAccess": null
+      },
+      "users": {
+        "includeUsers": [
+          "${groupid}"
+        ],
+        "excludeUsers": [
+          "${selfacountid}"
+        ],
+        "includeGroups": [],
+        "excludeGroups": [],
+        "includeRoles": [],
+        "excludeRoles": [],
+        "includeGuestsOrExternalUsers": null,
+        "excludeGuestsOrExternalUsers": null
+      }
+    },
+    "grantControls": {
+      "operator": "OR",
+      "builtInControls": [
+        "mfa"
+      ],
+      "customAuthenticationFactors": [],
+      "termsOfUse": [],
+      "authenticationStrength": null
+    },
+    "sessionControls": {
+      "disableResilienceDefaults": null,
+      "applicationEnforcedRestrictions": null,
+      "cloudAppSecurity": null,
+      "persistentBrowser": null,
+      "continuousAccessEvaluation": null,
+      "secureSignInSession": null,
+      "networkAccessSecurity": null,
+      "globalSecureAccessFilteringProfile": null,
+      "signInFrequency": {
+        "value": null,
+        "type": null,
+        "authenticationType": "primaryAndSecondaryAuthentication",
+        "frequencyInterval": "everyTime",
+        "isEnabled": true
+      }
+    },
+    "displayName": "危険なサインインポリシー",
+    "state": "enabledForReportingButNotEnforced"
+  }

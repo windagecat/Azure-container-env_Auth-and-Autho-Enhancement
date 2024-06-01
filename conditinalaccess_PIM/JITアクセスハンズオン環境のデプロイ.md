@@ -61,6 +61,6 @@ terraform init
 # terraform applyの実行
 terraform apply
 
-#PIMのUIで、k8sadmin-xxxx、k8scontributor-xxxx、armadmin-3HcY、armcontributor-xxxxが作成されていることを確認
+#PIMのUIで、k8sadmin-xxxx、k8scontributor-xxxx、armadmin-xxxx、armcontributor-xxxxが作成されていることを確認
 ```
 次は、[JITアクセスハンズオン実施](./JITアクセスハンズオン実施.md)について説明します。

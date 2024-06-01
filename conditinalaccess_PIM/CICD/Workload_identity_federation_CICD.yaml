@@ -1,0 +1,69 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+resources:
+- repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation  
+  dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
+
+  # Agent VM image name
+  linuxvmImageName: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  displayName: build docker
+  jobs:
+  - job: Build
+    displayName: Build docker
+    pool:
+      vmImage: $(linuxvmImageName)
+    steps:
+    - task: DockerInstaller@0
+      inputs:
+        dockerVersion: '17.09.0-ce'
+    - task: AzureCLI@2
+      inputs:
+       azureSubscription: 'Workload-identity-federation'
+       scriptType: 'bash'
+       scriptLocation: 'inlineScript'
+       inlineScript: |
+        az acr login --name $(dockerregistry)
+        docker build --file $(dockerfilePath) -t $(dockerregistry)/$(repository):$(Build.BuildId) .
+        docker push $(dockerregistry)/$(repository):$(Build.BuildId)
+
+- stage: Deploy
+  displayName: Deploy apps to aks
+  condition: succeeded()
+  jobs:
+  - job: Deploy
+    displayName: Deploy apps to aks
+    pool:
+      vmImage: $(linuxvmImageName)
+    steps:
+    - task: KubeloginInstaller@0
+      inputs:
+        kubeloginVersion: 'latest'
+    
+    - task: Bash@3
+      inputs:
+       targetType: 'inline'
+       script: |
+        kubelogin convert-kubeconfig -l workloadidentity
+    - task: KubernetesManifest@1
+      inputs:
+       action: 'deploy'
+       connectionType: 'azureResourceManager'
+       azureSubscriptionConnection: 'Workload-identity-federation'
+       azureResourceGroup: $(rg)
+       kubernetesCluster: $(k8scluster)
+       namespace: 'test'
+       manifests: '$(Build.SourcesDirectory)/manifest/testdep.yaml'
+       containers: '$(dockerregistry)/$(repository):$(Build.BuildId)'
+    

@@ -1,0 +1,56 @@
+{
+    "sessionControls": null,
+    "conditions": {
+      "userRiskLevels": [],
+      "signInRiskLevels": [],
+      "clientAppTypes": [
+        "all"
+      ],
+      "servicePrincipalRiskLevels": [],
+      "insiderRiskLevels": null,
+      "clients": null,
+      "platforms": null,
+      "locations": null,
+      "times": null,
+      "deviceStates": null,
+      "devices": null,
+      "clientApplications": null,
+      "authenticationFlows": null,
+      "applications": {
+        "includeApplications": [
+          "All"
+        ],
+        "excludeApplications": [],
+        "includeUserActions": [],
+        "includeAuthenticationContextClassReferences": [],
+        "applicationFilter": null,
+        "networkAccess": null,
+        "globalSecureAccess": null
+      },
+      "users": {
+        "includeUsers": [
+          "${groupid}"
+        ],
+        "excludeUsers": [
+          "${selfacountid}"
+        ],
+        "includeGroups": [],
+        "excludeGroups": [],
+        "includeRoles": [],
+        "excludeRoles": [],
+        "includeGuestsOrExternalUsers": null,
+        "excludeGuestsOrExternalUsers": null
+      }
+    },
+    "grantControls": {
+      "operator": "OR",
+      "builtInControls": [
+        "mfa"
+      ],
+      "customAuthenticationFactors": [],
+      "termsOfUse": [],
+      "authenticationStrength": null
+    },
+    "displayName": "MFA必須ポリシー",
+    "state": "enabledForReportingButNotEnforced"
+  }

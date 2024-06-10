@@ -13,8 +13,8 @@ cd .\Azure-container-env_Auth-and-Autho-Enhancement\conditinalaccess_PIM\conditi
 terraform destroy
 
 # サービスプリンシパルおよびグループの削除
-## .\Azure-container-env_Auth-and-Autho-Enhancement\conditinal_access\conditional_access_PIM\service_principalへの移動
-cd .\Azure-container-env_Auth-and-Autho-Enhancement\conditinal_access\conditional_access_PIM\service_principal
+## .\Azure-container-env_Auth-and-Autho-Enhancement\conditinalaccess_PIM\conditional_access_PIM\service_principalへの移動
+cd .\Azure-container-env_Auth-and-Autho-Enhancement\conditinalaccess_PIM\conditional_access_PIM\service_principal
 ## terraform destroyの実行
 terraform destroy
 

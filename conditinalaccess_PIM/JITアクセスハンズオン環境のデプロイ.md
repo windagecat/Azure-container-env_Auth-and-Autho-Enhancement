@@ -36,8 +36,8 @@ kubectl get node --kubeconfig="../kubeconfig"
 
 デプロイのためのサービスプリンシパルおよびグループの作成します。
 ```powershell
-# .\Azure-container-env_Auth-and-Autho-Enhancement\conditinal_access\conditional_access_PIM\service_principalへの移動
-cd .\Azure-container-env_Auth-and-Autho-Enhancement\conditinal_access\conditional_access_PIM\service_principal
+# .\Azure-container-env_Auth-and-Autho-Enhancement\conditinalaccess_PIM\conditional_access_PIM\service_principalへの移動
+cd .\Azure-container-env_Auth-and-Autho-Enhancement\conditinalaccess_PIM\conditional_access_PIM\service_principal
 
 # terraform initの実行
 terraform init
